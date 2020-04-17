@@ -1,0 +1,75 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	width: 800px;
+	margin: 50px auto;
+}
+.button-group {
+    background: #f2f2f2;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn {
+	display: inline-block;
+	border: 1px solid #cfcfcf;
+	padding: 12px 24px;
+	font-size: 16px;
+	background: #EEEEEE;
+	cursor: pointer;
+}
+.btn:not(:last-child) {
+	margin-right: 6px;
+}
+
+/* Popup Styles */
+.popup {
+	background: #000;
+	position: fixed;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	transition: all 0.3s;
+	pointer-events: none;
+	--opacity: 0;
+	opacity: var(--opacity);
+}
+.popup fieldset {
+	background: #eeeeee;
+	padding: 2rem;
+	border: 2px solid #cfcfcf;
+	border-radius: 4px;
+	width: 400px;
+	transition: all 0.3s;
+	--scale: 0.3;
+	transform: scale(var(--scale));
+}
+.popup.open {
+	--opacity: 0.8;
+	pointer-events: all;
+}
+.popup.open fieldset {
+	--scale: 1;
+}
+
+/* Popup fields style */
+.popup label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.popup input {
+	border: 1px solid #cfcfcf;
+	padding: 8px 6px;
+	width: 100%;
+	margin-bottom: 8px;
+}
